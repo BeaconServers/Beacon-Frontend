@@ -1,0 +1,105 @@
+{
+  "launchoptions": [
+    {
+      "matchmakingregions": [
+        "US-East",
+        "US-Central",
+        "US-West"
+      ],
+      "gamemodes": [
+        {
+          "id": 0,
+          "name": "Defusal"
+        },
+        {
+          "id": 1,
+          "name": "Hostage Rescue"
+        }
+      ],
+      "maps": {
+        "defusal": [
+          {
+            "id": 0,
+            "name": "Aztec"
+          },
+          {
+            "id": 1,
+            "name": "Cbble"
+          },
+          {
+            "id": 2,
+            "name": "Chateau"
+          },
+          {
+            "id": 3,
+            "name": "Dust"
+          },
+          {
+            "id": 4,
+            "name": "Dust2"
+          },
+          {
+            "id": 5,
+            "name": "Piranesi"
+          },
+          {
+            "id": 6,
+            "name": "Prodigy"
+          },
+          {
+            "id": 7,
+            "name": "Tides"
+          },
+          {
+            "id": 8,
+            "name": "Train"
+          },
+          {
+            "id": 9,
+            "name": "Inferno"
+          },
+          {
+            "id": 10,
+            "name": "Port"
+          },
+          {
+            "id": 11,
+            "name": "Nuke"
+          }
+        ],
+        "hostage": [
+          {
+            "id": 0,
+            "name": "Havana"
+          },
+          {
+            "id": 1,
+            "name": "Italy"
+          },
+          {
+            "id": 2,
+            "name": "Office"
+          },
+          {
+            "id": 3,
+            "name": "Compound"
+          },
+          {
+            "id": 4,
+            "name": "Assault"
+          },
+          {
+            "id": 5,
+            "name": "Militia"
+          }
+        ]
+      }
+    }
+  ],
+  "image": [
+    {
+      "name": "header_counterstrikesource",
+      "suffix": ".jpg" 
+    }
+  ] 
+}
