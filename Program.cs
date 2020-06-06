@@ -14,6 +14,7 @@ namespace Beacon
         [STAThread]
         static void Main()
         {
+            Test.Thing();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());
