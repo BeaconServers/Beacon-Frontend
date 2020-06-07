@@ -14,7 +14,8 @@ using Newtonsoft.Json.Linq;
 namespace Beacon
 {
     public partial class GameLauncher : Form
-    {
+    { 
+        private AssetManager
         public GameLauncher(string game)
         {
             InitializeComponent();
