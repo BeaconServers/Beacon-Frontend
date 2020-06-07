@@ -13,7 +13,7 @@ namespace Beacon
     public partial class Main : Form
     {
         private const string headerConst = @"\assets\media\header_";
-        public static Dictionary<string, Image> headerDictionary = new Dictionary<string, Image>();
+        public static Dictionary<string, Bitmap> headerDictionary = new Dictionary<string, Bitmap>();
 
         private void InitalizeHeaderDictionary()
         {
