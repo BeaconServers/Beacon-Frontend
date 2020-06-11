@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,12 +18,6 @@ namespace Beacon
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());
-        }
-
-        static void InitiateResources()
-        {
-            // var assembly = Assembly.GetExecutingAssembly();
-            // var cssjson = Beacon.Properties.Resources.
         }
     }
 }

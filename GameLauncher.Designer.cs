@@ -33,8 +33,8 @@
             this.labelMatchRegion = new System.Windows.Forms.Label();
             this.labelGameMode = new System.Windows.Forms.Label();
             this.labelMaps = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListGameModes = new System.Windows.Forms.CheckedListBox();
+            this.checkedListMaps = new System.Windows.Forms.CheckedListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -93,21 +93,23 @@
             this.labelMaps.TabIndex = 5;
             this.labelMaps.Text = "Maps";
             // 
-            // checkedListBox1
+            // checkedListGameModes
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(309, 111);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(223, 40);
-            this.checkedListBox1.TabIndex = 6;
+            this.checkedListGameModes.FormattingEnabled = true;
+            this.checkedListGameModes.Location = new System.Drawing.Point(309, 111);
+            this.checkedListGameModes.Name = "checkedListGameModes";
+            this.checkedListGameModes.Size = new System.Drawing.Size(223, 40);
+            this.checkedListGameModes.TabIndex = 6;
+            this.checkedListGameModes.SelectedIndexChanged += new System.EventHandler(this.checkedListGameModes_SelectedIndexChanged);
             // 
-            // checkedListBox2
+            // checkedListMaps
             // 
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(309, 189);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(223, 238);
-            this.checkedListBox2.TabIndex = 7;
+            this.checkedListMaps.FormattingEnabled = true;
+            this.checkedListMaps.Location = new System.Drawing.Point(309, 189);
+            this.checkedListMaps.Name = "checkedListMaps";
+            this.checkedListMaps.Size = new System.Drawing.Size(223, 238);
+            this.checkedListMaps.TabIndex = 7;
+            this.checkedListMaps.SelectedIndexChanged += new System.EventHandler(this.checkedListMaps_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -129,8 +131,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(550, 513);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkedListBox2);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.checkedListMaps);
+            this.Controls.Add(this.checkedListGameModes);
             this.Controls.Add(this.labelMaps);
             this.Controls.Add(this.labelGameMode);
             this.Controls.Add(this.labelMatchRegion);
@@ -153,8 +155,8 @@
         private System.Windows.Forms.Label labelMatchRegion;
         private System.Windows.Forms.Label labelGameMode;
         private System.Windows.Forms.Label labelMaps;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
+        private System.Windows.Forms.CheckedListBox checkedListGameModes;
+        private System.Windows.Forms.CheckedListBox checkedListMaps;
         private System.Windows.Forms.Button button1;
     }
 }
