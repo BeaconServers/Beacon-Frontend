@@ -11,7 +11,7 @@
         "Hostage Rescue"
       ],
       "maps": {
-        "gamemaps0" : [
+        "gamemaps0": [
           "Aztec",
           "Cbble",
           "Chateau",
@@ -33,7 +33,27 @@
           "Assault",
           "Militia"
         ]
-      }
+      },
+      "connections": [
+        "de_aztec",
+        "de_cbble",
+        "de_chateau",
+        "de_dust",
+        "de_dust2",
+        "de_piranesi",
+        "de_prodigy",
+        "de_tides",
+        "de_train",
+        "de_inferno",
+        "de_port",
+        "de_nuke",
+        "cs_havana",
+        "cs_italy",
+        "cs_office",
+        "cs_compound",
+        "cs_assault",
+        "cs_militia"
+      ] 
     }
   ],
   "image": [

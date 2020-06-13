@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.imgGame = new System.Windows.Forms.Panel();
             this.comboBoxMatchRegion = new System.Windows.Forms.ComboBox();
             this.labelMatchRegion = new System.Windows.Forms.Label();
             this.labelGameMode = new System.Windows.Forms.Label();
             this.labelMaps = new System.Windows.Forms.Label();
             this.checkedListGameModes = new System.Windows.Forms.CheckedListBox();
-            this.checkedListMaps = new System.Windows.Forms.CheckedListBox();
+            this.checkedListConnections = new System.Windows.Forms.CheckedListBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.toolTipConnections = new System.Windows.Forms.ToolTip(this.components);
+            this.quesion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // imgGame
@@ -78,9 +81,9 @@
             this.labelGameMode.Location = new System.Drawing.Point(309, 88);
             this.labelGameMode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelGameMode.Name = "labelGameMode";
-            this.labelGameMode.Size = new System.Drawing.Size(86, 20);
+            this.labelGameMode.Size = new System.Drawing.Size(93, 20);
             this.labelGameMode.TabIndex = 3;
-            this.labelGameMode.Text = "Game Mode";
+            this.labelGameMode.Text = "Game Modes";
             // 
             // labelMaps
             // 
@@ -89,9 +92,10 @@
             this.labelMaps.Location = new System.Drawing.Point(310, 165);
             this.labelMaps.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMaps.Name = "labelMaps";
-            this.labelMaps.Size = new System.Drawing.Size(43, 20);
+            this.labelMaps.Size = new System.Drawing.Size(86, 20);
             this.labelMaps.TabIndex = 5;
-            this.labelMaps.Text = "Maps";
+            this.labelMaps.Text = "Connections";
+            this.labelMaps.Click += new System.EventHandler(this.labelMaps_Click);
             // 
             // checkedListGameModes
             // 
@@ -102,14 +106,14 @@
             this.checkedListGameModes.TabIndex = 6;
             this.checkedListGameModes.SelectedIndexChanged += new System.EventHandler(this.checkedListGameModes_SelectedIndexChanged);
             // 
-            // checkedListMaps
+            // checkedListConnections
             // 
-            this.checkedListMaps.FormattingEnabled = true;
-            this.checkedListMaps.Location = new System.Drawing.Point(309, 189);
-            this.checkedListMaps.Name = "checkedListMaps";
-            this.checkedListMaps.Size = new System.Drawing.Size(223, 238);
-            this.checkedListMaps.TabIndex = 7;
-            this.checkedListMaps.SelectedIndexChanged += new System.EventHandler(this.checkedListMaps_SelectedIndexChanged);
+            this.checkedListConnections.FormattingEnabled = true;
+            this.checkedListConnections.Location = new System.Drawing.Point(309, 189);
+            this.checkedListConnections.Name = "checkedListConnections";
+            this.checkedListConnections.Size = new System.Drawing.Size(223, 238);
+            this.checkedListConnections.TabIndex = 7;
+            this.checkedListConnections.SelectedIndexChanged += new System.EventHandler(this.checkedListConnections_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -124,14 +128,27 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // quesion
+            // 
+            this.quesion.AutoSize = true;
+            this.quesion.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.quesion.Location = new System.Drawing.Point(516, 166);
+            this.quesion.Name = "quesion";
+            this.quesion.Size = new System.Drawing.Size(16, 20);
+            this.quesion.TabIndex = 9;
+            this.quesion.Text = "?";
+            this.quesion.Click += new System.EventHandler(this.label1_Click_1);
+            this.quesion.MouseHover += new System.EventHandler(this.quesion_MouseHover);
+            // 
             // GameLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(550, 513);
+            this.Controls.Add(this.quesion);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkedListMaps);
+            this.Controls.Add(this.checkedListConnections);
             this.Controls.Add(this.checkedListGameModes);
             this.Controls.Add(this.labelMaps);
             this.Controls.Add(this.labelGameMode);
@@ -156,7 +173,9 @@
         private System.Windows.Forms.Label labelGameMode;
         private System.Windows.Forms.Label labelMaps;
         private System.Windows.Forms.CheckedListBox checkedListGameModes;
-        private System.Windows.Forms.CheckedListBox checkedListMaps;
+        private System.Windows.Forms.CheckedListBox checkedListConnections;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolTip toolTipConnections;
+        private System.Windows.Forms.Label quesion;
     }
 }
