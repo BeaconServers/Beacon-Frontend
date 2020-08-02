@@ -1,0 +1,25 @@
+{
+  "launchoptions": [
+    {
+      "matchmakingregions": [
+        "US-East",
+        "US-Central",
+        "US-West"
+      ],
+      "gamemodes": [
+        "Attack & Defend",
+        "Control Points",
+        "King of the Hill",
+        "Payload",
+        "Capture the Flag"
+      ],
+      "connections": [
+        "ctf_2fort",
+        "koth_harvest",
+        "pl_upward",
+        "cp_well",
+        "cp_dustbowl"
+      ] 
+    }
+  ]
+}

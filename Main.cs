@@ -7,17 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Http;
 
 namespace Beacon
 {
     public partial class Main : Form
     {
-        private const string headerConst = @"\assets\media\header_";
+        // private const string headerConst = @"\assets\media\header_";
         public static Dictionary<string, Bitmap> headerDictionary = new Dictionary<string, Bitmap>();
+
+        public static readonly HttpClient client = new HttpClient();
 
         private void InitalizeHeaderDictionary()
         {
             headerDictionary.Add("counterstrikesource", Beacon.Properties.Resources.header_counterstrikesource);
+            headerDictionary.Add("teamfortress2", Properties.Resources.header_teamfortress2);
         }
 
         public Main()
@@ -31,6 +35,7 @@ namespace Beacon
             openChildGameForm(new GameLauncher("counterstrikesource"), "counterstrikesource");
         }
 
+        // This probably isn't the most effecient but meh
         private Form activeGameForm = null;
         private void openChildGameForm(Form childGameForm, string game)
         {
@@ -44,6 +49,11 @@ namespace Beacon
                 activeGameForm = new GameLauncher(game);
             }
 
+            if (childGameForm == null)
+            {
+                return;
+            }
+
             activeGameForm = childGameForm;
             childGameForm.TopLevel = false;
             childGameForm.FormBorderStyle = FormBorderStyle.None;
@@ -52,6 +62,11 @@ namespace Beacon
             panelChildGameForm.Tag = childGameForm;
             childGameForm.BringToFront();
             childGameForm.Show();
+        }
+
+        private void btnteamfortress2_Click(object sender, EventArgs e)
+        {
+            openChildGameForm(new GameLauncher("teamfortress2"), "teamfortress2");
         }
     }
 }

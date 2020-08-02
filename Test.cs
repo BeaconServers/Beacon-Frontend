@@ -13,8 +13,6 @@ namespace Beacon
     {
         public static void Thing()
         {
-            JObject json = JObject.Parse(File.ReadAllText(
-                @"C:\Users\lgast\OneDrive\Documents\GitHub\Beacon\resources\json\gamelaunch\counterstrikesource.json"));
             // var result = JsonConvert.DeserializeObject<LaunchOptions>(json.ToString());
             // Console.WriteLine(result.gamemodes[0].name);
         }
@@ -44,7 +42,7 @@ namespace Beacon
         public List<DefusalMaps> defusalMaps;
         public List<HostageMaps> hostageMaps;
     }
-
+    
     public class DefusalMaps
     {
         public int id;

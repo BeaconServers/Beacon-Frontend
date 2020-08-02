@@ -70,26 +70,25 @@ namespace Beacon.Properties {
         ///        &quot;US-West&quot;
         ///      ],
         ///      &quot;gamemodes&quot;: [
-        ///        {
-        ///          &quot;id&quot;: 0,
-        ///          &quot;name&quot;: &quot;Defusal&quot;
-        ///        },
-        ///        {
-        ///          &quot;id&quot;: 1,
-        ///          &quot;name&quot;: &quot;Hostage Rescue&quot;
-        ///        }
+        ///        &quot;Defusal&quot;,
+        ///        &quot;Hostage Rescue&quot;
         ///      ],
         ///      &quot;maps&quot;: {
-        ///        &quot;defusal&quot;: [
-        ///          {
-        ///            &quot;id&quot;: 0,
-        ///            &quot;name&quot;: &quot;Aztec&quot;
-        ///          },
-        ///          {
-        ///            &quot;id&quot;: 1,
-        ///            &quot;name&quot;: &quot;Cbble&quot;
-        ///          },
-        /// [rest of string was truncated]&quot;;.
+        ///        &quot;gamemaps0&quot;: [
+        ///          &quot;Aztec&quot;,
+        ///          &quot;Cbble&quot;,
+        ///          &quot;Chateau&quot;,
+        ///          &quot;Dust&quot;,
+        ///          &quot;Dust2&quot;,
+        ///          &quot;Piranesi&quot;,
+        ///          &quot;Prodigy&quot;,
+        ///          &quot;Tides&quot;,
+        ///          &quot;Train&quot;,
+        ///          &quot;Inferno&quot;,
+        ///          &quot;Port&quot;,
+        ///          &quot;Nuke&quot;
+        ///        ],
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string counterstrikesource {
             get {
@@ -104,6 +103,50 @@ namespace Beacon.Properties {
             get {
                 object obj = ResourceManager.GetObject("header_counterstrikesource", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap header_teamfortress2 {
+            get {
+                object obj = ResourceManager.GetObject("header_teamfortress2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;launchoptions&quot;: [
+        ///    {
+        ///      &quot;matchmakingregions&quot;: [
+        ///        &quot;US-East&quot;,
+        ///        &quot;US-Central&quot;,
+        ///        &quot;US-West&quot;
+        ///      ],
+        ///      &quot;gamemodes&quot;: [
+        ///        &quot;Attack &amp; Defend&quot;,
+        ///        &quot;Control Points&quot;,
+        ///        &quot;King of the Hill&quot;,
+        ///        &quot;Payload&quot;,
+        ///        &quot;Capture the Flag&quot;
+        ///      ],
+        ///      &quot;connections&quot;: [
+        ///        &quot;ctf_2fort&quot;,
+        ///        &quot;koth_harvest&quot;,
+        ///        &quot;pl_upward&quot;,
+        ///        &quot;cp_well&quot;,
+        ///        &quot;cp_dustbowl&quot;
+        ///      ] 
+        ///    }
+        ///  ]
+        ///}
+        ///.
+        /// </summary>
+        public static string teamfortress2 {
+            get {
+                return ResourceManager.GetString("teamfortress2", resourceCulture);
             }
         }
     }
