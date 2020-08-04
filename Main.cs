@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Beacon
 {
@@ -15,8 +17,9 @@ namespace Beacon
     {
         // private const string headerConst = @"\assets\media\header_";
         public static Dictionary<string, Bitmap> headerDictionary = new Dictionary<string, Bitmap>();
+        public static Dictionary<string, JObject> jsonLaunchOptions = new Dictionary<string, JObject>();
 
-        public static readonly HttpClient client = new HttpClient();
+        public static readonly HttpClient Client = new HttpClient();
 
         private void InitalizeHeaderDictionary()
         {
@@ -67,6 +70,28 @@ namespace Beacon
         private void btnteamfortress2_Click(object sender, EventArgs e)
         {
             openChildGameForm(new GameLauncher("teamfortress2"), "teamfortress2");
+            RetriveGameStuff();
+        }
+
+        private async void RetriveGameStuff()
+        {
+            var responseString = await Client.GetStringAsync("http://127.0.0.1/Beacon/games.json");
+            Console.WriteLine(responseString);
+        }
+
+        private async void RetriveGameLaunchOptions()
+        {
+            var gamesList = await Client.GetStringAsync("http://127.0.0.1/Beacon/games.json");
+            var gamesListParsedObject = JObject.Parse(gamesList);
+            if (gamesListParsedObject.SelectToken("games[0]") != null)
+            {
+                string[] gamesListParsedArray = gamesListParsedObject.SelectToken("games[0]").ToObject<string[]>();
+            }
+
+            foreach (string game in gamesListParsedObject)
+            {
+
+            }
         }
     }
 }
