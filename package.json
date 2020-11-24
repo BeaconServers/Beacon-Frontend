@@ -1,37 +1,28 @@
 {
-  "name": "react-nodegui-starter",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "Atul R <atulanand94@gmail.com>",
-  "license": "MIT",
+  "name": "beacon-client",
+  "version": "0.1 alpha",
   "private": true,
-  "scripts": {
-    "build": "webpack -p",
-    "dev": "webpack --mode=development",
-    "start": "qode ./dist/index.js",
-    "debug": "qode --inspect ./dist/index.js"
-  },
   "dependencies": {
-    "@nodegui/react-nodegui": "^0.8.0",
-    "open": "^7.0.4",
-    "react": "^16.13.1"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-localization": "^1.0.13",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "2.1.8",
+    "muicss": "^0.9.41",
+    "react-firebaseui": "^4.0.0",
+    "firebase": "~7.5.0"
   },
-  "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
-    "@babel/preset-react": "^7.10.1",
-    "@babel/preset-typescript": "^7.10.1",
-    "@nodegui/packer": "^1.4.1",
-    "@types/node": "^14.0.12",
-    "@types/react": "^16.9.35",
-    "@types/webpack-env": "^1.15.2",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "file-loader": "^6.0.0",
-    "fork-ts-checker-webpack-plugin": "^4.1.6",
-    "native-addon-loader": "^2.0.1",
-    "typescript": "^3.9.5",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
-  }
+  "scripts": {
+    "start": "PORT=3000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "openbrowser": "node -e 'const openBrowser = require(\"react-dev-utils/openBrowser\"); openBrowser(\"http://localhost:3000\"); process.exit();'"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

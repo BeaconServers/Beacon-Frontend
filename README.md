@@ -1,63 +1,68 @@
-# react-nodegui-starter
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**Clone and run for a quick way to see React NodeGui in action.**
+## Available Scripts
 
-<img alt="logo" src="https://github.com/nodegui/react-nodegui-starter/raw/master/assets/demo.png" height="500" />
+In the project directory, you can run:
 
-## To Use
+### `npm start`
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```bash
-# Clone this repository
-git clone https://github.com/nodegui/react-nodegui-starter
-# Install CMake
-brew install cmake
-# Go into the repository
-cd react-nodegui-starter
-# Install dependencies
-npm install
-# Run the dev server
-npm run dev
-# Open andother terminal and run the app
-npm start
-```
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-## Installation & Resources for learning React NodeGui
+### `npm test`
 
-- [Documentation](https://react.nodegui.org) - all of React NodeGui's documentation.
-- [NodeGui](https://nodegui.org) - all of NodeGui's documentation.
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Packaging app as a distributable
+### `npm run build`
 
-In order to distribute your finished app, you can use [@nodegui/packer](https://github.com/nodegui/packer)
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Step 1: (_**Run this command only once**_)
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-```sh
-npx nodegui-packer --init MyAppName
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-This will produce the deploy directory containing the template. You can modify this to suite your needs. Like add icons, change the name, description and add other native features or dependencies. Make sure you commit this directory.
+### `npm run eject`
 
-### Step 2: (_**Run this command every time you want to build a new distributable**_)
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Next you can run the pack command:
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-```sh
-npm run build
-```
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-This will produce the js bundle along with assets inside the `./dist` directory
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-```sh
-npx nodegui-packer --pack ./dist
-```
+## Learn More
 
-This will build the distributable using @nodegui/packer based on your template. The output of the command is found under the build directory. You should gitignore the build directory.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-More details about packer can be found here: https://github.com/nodegui/packer
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## License
+### Code Splitting
 
-MIT
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
