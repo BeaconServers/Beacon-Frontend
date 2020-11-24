@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Install Instructions
+1. Download the latest binary
+2. Extract the archive
+3. Open a terminal / command prompt within the folder
+4. npm install node-modules
+5. npm install
+6. npm audit fix
+7. npm fund
+8. Start the server with npm start or yarn start
 
 ## Available Scripts
 
