@@ -5,6 +5,7 @@ import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 // eslint-disable-next-line
 import * as util from 'util';
 import './App.css';
+import Scrn_GameMenuScreen from './Scrn_GameMenuScreen.js';
 import MainMenuScreen from './MainMenuScreen.js';
 import SignInScreen from './SignInScreen.js';
 import StartScreen from './StartScreen.js';
@@ -31,18 +32,23 @@ class App extends Component {
     this.updateLocalizationFromDataSheet(this.dataSheets['localizationSheet']);
 
 
+    const config = {
+      apiKey: "AIzaSyDMIcP1obi-e4-0MVXmqS9mU-qgStWGnPo",
+      authDomain: "beacon-237f1.firebaseapp.com",
+      databaseURL: "https://beacon-237f1.firebaseio.com",
+      projectId: "beacon-237f1",
+      storageBucket: "beacon-237f1.appspot.com",
+      messagingSenderId: "501948823334",
+      appId: "1:501948823334:web:294b023461750bc943f3e7",
+      measurementId: "G-SPB8G50T1R"
+    };
     // Initialize web service plugin 'beacon_login'
-    firebase.initializeApp({
-    	apiKey: "AIzaSyDMIcP1obi-e4-0MVXmqS9mU-qgStWGnPo",
-        authDomain: "beacon-237f1.firebaseapp.com",
-        databaseURL: "https://beacon-237f1.firebaseio.com",
-        projectId: "beacon-237f1",
-        storageBucket: "beacon-237f1.appspot.com",
-        messagingSenderId: "501948823334",
-        appId: "1:501948823334:web:294b023461750bc943f3e7",
-        measurementId: "G-SPB8G50T1R"
-    });
+    firebase.initializeApp(config);
     firebase.firestore().settings({});
+
+
+
+
     
 
     this.state = {
@@ -167,6 +173,8 @@ class App extends Component {
       switch (screenId) {
         default:
           return null;
+        case 'scrn_GameMenu':
+          return (<Scrn_GameMenuScreen {...screenProps} />)
         case 'mainMenu':
           return (<MainMenuScreen {...screenProps} />)
         case 'signIn':
@@ -180,6 +188,9 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route path="/" render={(props) => makeElementForScreen('signIn', props.location.state, true, true)} exact />
+          <Route path="/scrn_GameMenu" render={(props) => {
+            return makeElementForScreen('scrn_GameMenu', props.location.state, true, true);
+          }} />
           <Route path="/mainMenu" render={(props) => {
             return (firebase.auth().currentUser != null) ? makeElementForScreen('mainMenu', props.location.state, true, true) : <Redirect to="/signIn" />;
           }} />
@@ -194,4 +205,5 @@ class App extends Component {
     );
   }
 }
+export const db = firebase.database();
 export default withRouter(App)

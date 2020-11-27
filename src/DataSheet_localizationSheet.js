@@ -35,6 +35,31 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     item['key'] = "component1_textblock_238288";
     item['en'] = "Team Fortress 2";
     
+    item = {};
+    this.items.push(item);
+    item['key'] = "signin_textblock_588784";
+    item['en'] = "Beacon Client v0.1-alpha";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "component1_validator_477625";
+    item['en'] = " ";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "cmp_gamemapselection_textblock_641019";
+    item['en'] = "PLACE HOLDER";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "cmp_gamemapselection_checkbox_80271";
+    item['en'] = "PLACE HOLDER";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "cmp_gamemenu_folder_text_509402";
+    item['en'] = "PLACEHOLDER";
+    
     let storedItems = localStorage.getItem(this.id);
     if (storedItems != null) {
       this.items = JSON.parse(storedItems);

@@ -1,6 +1,6 @@
 {
-  "name": "beacon-client",
-  "version": "0.1 alpha",
+  "name": "exported-from-react-studio",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",

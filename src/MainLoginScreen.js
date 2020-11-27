@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elImg_beacon_logo from './images/SignInScreen_elImg_beacon_logo_1003323.png';
+import img_elImg_beacon_logo from './images/MainLoginScreen_elImg_beacon_logo_1003323.png';
 import Comp_login from './Comp_login';
 import FirebaseLogin from './FirebaseLogin';
 import firebase from 'firebase';
 import firestore from 'firebase/firestore';
 
-export default class SignInScreen extends Component {
+// UI framework component imports
+import Appbar from 'muicss/lib/react/appbar';
+
+export default class MainLoginScreen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo
@@ -27,7 +30,7 @@ export default class SignInScreen extends Component {
             if (this._elFirebaseLogin)
               this._elFirebaseLogin.saveCurrentUserDataInApp();
             
-            sessionStorage.setItem('loginStatus_signIn', 'active');
+            sessionStorage.setItem('loginStatus_mainLogin', 'active');
             this.props.appActions.goToScreen('mainMenu');
             
           }
@@ -59,10 +62,17 @@ export default class SignInScreen extends Component {
       height: '100%',
      };
     const style_elBackground_outer = {
-      backgroundColor: '#772dc8',
+      backgroundColor: '#f6f6f6',
+     };
+    
+    const style_elShape_background_purple = {
+      background: 'rgba(114, 45, 202, 1.000)',
      };
     const style_elImg_beacon_logo = {
-      height: 'auto',
+      backgroundImage: 'url('+img_elImg_beacon_logo+')',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: '50% 50%',
+      backgroundSize: 'cover',
      };
     const style_elTxt_login = {
       fontSize: 18.0,
@@ -73,27 +83,22 @@ export default class SignInScreen extends Component {
       pointerEvents: 'auto',
       display: 'none',
      };
-    const style_elTextBlock = {
-      fontSize: 15.2,
-      color: '#fefffa',
-      textAlign: 'left',
-     };
-    // eslint-disable-next-line no-unused-vars
-    const style_elTextBlock_inner = {
-      textAlign: 'left',
-     };
     
     return (
-      <div className="AppScreen SignInScreen" style={baseStyle}>
+      <div className="AppScreen MainLoginScreen" style={baseStyle}>
         <div className="background">
           <div className="containerMinHeight elBackground" style={style_elBackground_outer}>
-            <div style={style_elBackground} />
+            <div className="appBg" style={style_elBackground} />
           </div>
         </div>
+        <Appbar className="navBar">
+          <div className="title">Main Login</div>  <div className="backBtn" onClick={ (ev)=>{ this.props.appActions.goBack() } }></div>
+        </Appbar>
         
         <div className="screenFgContainer">
           <div className="foreground">
-            <img className="elImg_beacon_logo" style={style_elImg_beacon_logo} src={img_elImg_beacon_logo} alt=""  />
+            <div className="elShape_background_purple" style={style_elShape_background_purple} />
+            <div className="elImg_beacon_logo" style={style_elImg_beacon_logo} />
             <div className="font-goodTimesRgRegular  elTxt_login" style={style_elTxt_login}>
               <div>{this.props.locStrings.mainlogin_textblock_519867}</div>
             </div>
@@ -102,9 +107,6 @@ export default class SignInScreen extends Component {
             </div>
             <div className="elFirebaseLogin" style={style_elFirebaseLogin}>
               <FirebaseLogin ref={(el)=> this._elFirebaseLogin = el} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />
-            </div>
-            <div className="font-helvetica  elTextBlock" style={style_elTextBlock}>
-              <div className="bottomAlignedContent">{this.props.locStrings.signin_textblock_588784}</div>
             </div>
           </div>
         </div>

@@ -18,6 +18,16 @@
   font-family: 'GoodTimesRg-Regular', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
 }
 
+/* Font copied in place by React Studio. Please check that your license for this font file permits embedding on a website. */
+@font-face {
+  font-family: 'Helvetica';
+  src: url('fonts/Helvetica.ttf');
+}
+
+.font-helvetica {
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+}
+
 .App { /* Base font style */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
   font-size: 15.2px;
@@ -415,6 +425,44 @@
     height: 44px;
   }
 
+
+/* Narrowest size for this element's responsive layout */
+  .Scrn_GameMenuScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .Scrn_GameMenuScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .Scrn_GameMenuScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .Scrn_GameMenuScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
 /* This component has a fixed-size layout */
   .Comp_login {
     width: 100%; /* This component was designed using a width of 270px */
@@ -643,14 +691,14 @@
   .SignInScreen > .screenFgContainer > .foreground > .elImg_beacon_logo {
     position: absolute;
     left: calc(50.0% + -106px);
-    top: 50px;
+    top: 25px;
     width: 213px;
     height: 156px;
   }
 @media (min-width: 568px) {
   .SignInScreen > .screenFgContainer > .foreground > .elImg_beacon_logo {
     left: calc(50.0% + -106px);
-    top: 50px;
+    top: 25px;
     width: 213px;
     height: 156px;
   }
@@ -658,7 +706,7 @@
 @media (min-width: 768px) {
   .SignInScreen > .screenFgContainer > .foreground > .elImg_beacon_logo {
     left: calc(50.0% + -106px);
-    top: 50px;
+    top: 25px;
     width: 212px;
     height: 155px;
   }
@@ -666,7 +714,7 @@
 @media (min-width: 1024px) {
   .SignInScreen > .screenFgContainer > .foreground > .elImg_beacon_logo {
     left: calc(50.0% + -106px);
-    top: 50px;
+    top: 25px;
     width: 212px;
     height: 155px;
   }
@@ -676,14 +724,14 @@
 /* Narrowest size for this element's responsive layout */
   .SignInScreen > .screenFgContainer > .foreground > .elTxt_login {
     position: absolute;
-    left: 42px;
+    left: calc(50.0% + -118px);
     top: 190px;
     width: 235px;
     height: 49px;
   }
 @media (min-width: 568px) {
   .SignInScreen > .screenFgContainer > .foreground > .elTxt_login {
-    left: 42px;
+    left: calc(50.0% + -118px);
     top: 190px;
     width: 235px;
     height: 49px;
@@ -691,7 +739,7 @@
 }
 @media (min-width: 768px) {
   .SignInScreen > .screenFgContainer > .foreground > .elTxt_login {
-    left: 42px;
+    left: calc(50.0% + -117px);
     top: 189px;
     width: 234px;
     height: 49px;
@@ -699,7 +747,7 @@
 }
 @media (min-width: 1024px) {
   .SignInScreen > .screenFgContainer > .foreground > .elTxt_login {
-    left: 42px;
+    left: calc(50.0% + -117px);
     top: 189px;
     width: 234px;
     height: 49px;
@@ -720,7 +768,7 @@
 /* Narrowest size for this element's responsive layout */
   .SignInScreen > .screenFgContainer > .foreground > .elComp_login {
     position: absolute;
-    left: 27px;
+    left: calc(50.0% + -135px);
     top: 250px;
     width: 270px;
     height: 256px;
@@ -731,7 +779,7 @@
 
 @media (min-width: 568px) {
   .SignInScreen > .screenFgContainer > .foreground > .elComp_login {
-    left: 27px;
+    left: calc(50.0% + -135px);
     top: 250px;
     width: 270px;
     height: 256px;
@@ -743,7 +791,7 @@
 }
 @media (min-width: 768px) {
   .SignInScreen > .screenFgContainer > .foreground > .elComp_login {
-    left: 27px;
+    left: calc(50.0% + -134px);
     top: 248px;
     width: 268px;
     height: 254px;
@@ -755,7 +803,7 @@
 }
 @media (min-width: 1024px) {
   .SignInScreen > .screenFgContainer > .foreground > .elComp_login {
-    left: 27px;
+    left: calc(50.0% + -134px);
     top: 248px;
     width: 268px;
     height: 254px;
@@ -773,14 +821,14 @@
     left: calc(50.0% + -134px);
     top: 250px;
     width: 267px;
-    height: 256px;
+    height: 298px;
   }
 @media (min-width: 568px) {
   .SignInScreen > .screenFgContainer > .foreground > .elFirebaseLogin {
     left: calc(50.0% + -134px);
     top: 250px;
     width: 267px;
-    height: 256px;
+    height: 298px;
   }
 }
 @media (min-width: 768px) {
@@ -788,7 +836,7 @@
     left: calc(50.0% + -133px);
     top: 248px;
     width: 266px;
-    height: 254px;
+    height: 296px;
   }
 }
 @media (min-width: 1024px) {
@@ -796,7 +844,45 @@
     left: calc(50.0% + -133px);
     top: 248px;
     width: 266px;
-    height: 254px;
+    height: 296px;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .SignInScreen > .screenFgContainer > .foreground > .elTextBlock {
+    overflow: hidden;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: 193px;
+    height: 22px;
+  }
+@media (min-width: 568px) {
+  .SignInScreen > .screenFgContainer > .foreground > .elTextBlock {
+    overflow: hidden;
+    left: 10px;
+    bottom: 10px;
+    width: 193px;
+    height: 22px;
+  }
+}
+@media (min-width: 768px) {
+  .SignInScreen > .screenFgContainer > .foreground > .elTextBlock {
+    overflow: hidden;
+    left: 10px;
+    bottom: 10px;
+    width: 192px;
+    height: 22px;
+  }
+}
+@media (min-width: 1024px) {
+  .SignInScreen > .screenFgContainer > .foreground > .elTextBlock {
+    overflow: hidden;
+    left: 10px;
+    bottom: 10px;
+    width: 192px;
+    height: 22px;
   }
 }
 
@@ -837,4 +923,165 @@
     height: 100%;
   }
 }
+
+/* This component has a fixed-size layout */
+  .Cmp_GameMapSelection {
+    min-width: 300px; /* This component has a fixed size */
+  }
+
+
+  .Cmp_GameMapSelection > .layoutFlow > .elCheckbox {
+    position: relative;
+    margin-top: 4px;
+    width: 292px;
+    margin-left: 5px;
+  }
+  .Cmp_GameMapSelection > .layoutFlow > .elCheckbox > * { 
+  width: 292px;
+  }
+  
+
+/* This component has a fixed-size layout */
+  .Cmp_GameMenu_folder {
+    min-height: 75px;  /* This component has a fixed size */
+    overflow: hidden;
+    min-width: 300px; /* This component has a fixed size */
+  }
+  .Cmp_GameMenu_folder > .background > .containerMinHeight {
+    min-height: 75px;
+  }
+
+
+  .Cmp_GameMenu_folder > .background > .state0_elBackground986923 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+
+.Cmp_GameMenu_folder .state0_elBtn_state11043681 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.Cmp_GameMenu_folder .state0_elBtn_state11043681:focus {
+  box-shadow: 0 0 5px rgba(22, 43, 214, 0.5000);
+  outline: none;
+}
+
+
+
+  .Cmp_GameMenu_folder > .foreground > .state0_elBtn_state11043681 {
+    position: absolute;
+    left: 9px;
+    top: 17px;
+    width: 41px;
+    height: 36px;
+  }
+
+
+  .Cmp_GameMenu_folder > .foreground > .state0_elText509402 {
+    overflow: hidden;
+    position: absolute;
+    left: 50px;
+    top: 25px;
+    width: 238px;
+    height: 34px;
+  }
+
+.Cmp_GameMenu_folder .state0_elIconButtonCopy622393 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.Cmp_GameMenu_folder .state0_elIconButtonCopy622393:focus {
+  box-shadow: 0 0 5px rgba(22, 43, 214, 0.5000);
+  outline: none;
+}
+
+
+
+  .Cmp_GameMenu_folder > .foreground > .state0_elIconButtonCopy622393 {
+    position: absolute;
+    left: 9px;
+    top: 17px;
+    width: 41px;
+    height: 36px;
+  }
+
+/* This component has a fixed-size layout */
+  .Cmp_GameMenu_folder {
+    min-height: 75px;  /* This component has a fixed size */
+    overflow: hidden;
+    min-width: 300px; /* This component has a fixed size */
+  }
+  .Cmp_GameMenu_folder > .background > .containerMinHeight {
+    min-height: 75px;
+  }
+
+
+  .Cmp_GameMenu_folder > .background > .state1_elBackground986923 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+
+.Cmp_GameMenu_folder .state1_elBtn_state11043681 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.Cmp_GameMenu_folder .state1_elBtn_state11043681:focus {
+  box-shadow: 0 0 5px rgba(22, 43, 214, 0.5000);
+  outline: none;
+}
+
+
+
+  .Cmp_GameMenu_folder > .foreground > .state1_elBtn_state11043681 {
+    position: absolute;
+    left: 9px;
+    top: 17px;
+    width: 41px;
+    height: 36px;
+  }
+
+
+  .Cmp_GameMenu_folder > .foreground > .state1_elText509402 {
+    overflow: hidden;
+    position: absolute;
+    left: 50px;
+    top: 25px;
+    width: 238px;
+    height: 34px;
+  }
+
+.Cmp_GameMenu_folder .state1_elIconButtonCopy622393 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.Cmp_GameMenu_folder .state1_elIconButtonCopy622393:focus {
+  box-shadow: 0 0 5px rgba(22, 43, 214, 0.5000);
+  outline: none;
+}
+
+
+
+  .Cmp_GameMenu_folder > .foreground > .state1_elIconButtonCopy622393 {
+    position: absolute;
+    left: 9px;
+    top: 17px;
+    width: 41px;
+    height: 36px;
+  }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { db } from './App';
 import './App.css';
 import GameButton from './GameButton';
 import btn_icon_back_mainmenu from './images/btn_icon_back_mainmenu.png';
@@ -10,15 +11,25 @@ export default class MainMenuScreen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo
+  game_amount;
 
   constructor(props) {
     super(props);
     
     this.state = {
     };
+    db.ref("client-game-amount").once('value').then((snapshot) => {
+      this.game_amount = snapshot.val();
+    })
+    for(let i = 0; i < this.game_amount; i++) {
+      db.ref('client-games/' + i).once('value').then((snapshot) => {
+        console.log(snapshot.val);
+      })
+    }
   }
 
   componentDidMount() {
+
   }
 
   componentWillUnmount() {
@@ -27,6 +38,13 @@ export default class MainMenuScreen extends Component {
   componentDidUpdate() {
   }
 
+  onClick_elGameButton = (ev) => {
+    // Go to screen 'scrn_GameMenu'
+    this.props.appActions.goToScreen('scrn_GameMenu', { transitionId: 'slideIn_right' });
+  
+  }
+  
+  
   render() {
     let layoutFlowStyle = {};
     let baseStyle = {};
@@ -45,6 +63,10 @@ export default class MainMenuScreen extends Component {
     const style_elBackground_outer = {
       backgroundColor: '#9050f6',
      };
+    const style_elGameButton = {
+      cursor: 'pointer',
+      pointerEvents: 'auto',
+     };
     
     return (
       <div className="AppScreen MainMenuScreen" style={baseStyle}>
@@ -55,9 +77,9 @@ export default class MainMenuScreen extends Component {
         </div>
         
         <div className="layoutFlow" style={layoutFlowStyle}>
-          <div className="hasNestedComps elGameBiutton">
-            <div>
-              <GameButton ref={(el)=> this._elGameBiutton = el} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />
+          <div className="hasNestedComps elGameButton">
+            <div style={style_elGameButton} onClick={this.onClick_elGameButton} >
+              <GameButton ref={(el)=> this._elGameButton = el} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />
             </div>
           </div>
           
