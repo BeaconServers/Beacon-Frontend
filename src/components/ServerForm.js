@@ -18,12 +18,25 @@ class ServerForm extends React.Component {
             formMaximumPing: null
         }
     }
+
+    componentDidMount() {
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: 'shelby', password: 'kelly' })
+        };
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            console.log(this.responseText);
+
+        };
+        xhttp.open("POST", "http://127.0.0.1/register.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("username=Henry&password=Ford&email=henry@gmail.com");
+    }
+
     render() {
-        fetch('http://127.0.0.1/login.php').then(function (response) {
-            console.log("Got it!");
-        }, function(e) {
-            console.log("Error!");
-        });
         return(
             <div className={styles.root}>
                 <h1>{this.state.gameName}</h1>
