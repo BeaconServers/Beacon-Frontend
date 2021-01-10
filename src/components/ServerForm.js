@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../css/ServerForm.module.css';
+
 
 class ServerForm extends React.Component {
 
@@ -20,12 +20,6 @@ class ServerForm extends React.Component {
     }
 
     componentDidMount() {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username: 'shelby', password: 'kelly' })
-        };
-
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             console.log(this.responseText);
@@ -38,7 +32,7 @@ class ServerForm extends React.Component {
 
     render() {
         return(
-            <div className={styles.root}>
+            <div>
                 <h1>{this.state.gameName}</h1>
                 <p>Server Regions</p>
             </div>
