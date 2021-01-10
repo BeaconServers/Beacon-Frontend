@@ -1,0 +1,12 @@
+div {
+    font-family: "Comic Sans MS";
+}
+
+.root {
+    background-color: rebeccapurple;
+    height: 700px;
+}
+
+.other {
+    background-color: hotpink;
+}
