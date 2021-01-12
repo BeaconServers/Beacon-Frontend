@@ -69,14 +69,6 @@ class Login extends React.Component {
                                     </i>
                                     <input type="password" name="password" placeholder="Password" onChange={this.set_password}/>
                                 </div>
-                                <div className="field">
-                                    <div className="ui left icon input">
-                                        <i className="lock icon">
-                                        </i>
-                                        <input type="password" name="password" placeholder="Password" />
-                                    </div>
-                                </div>
-                                <button type="submit" className="ui fluid large purple submit button">Login</button>
                             </div>
                             <button type="submit" className="ui fluid large purple submit button">Login</button>
                         </div>
