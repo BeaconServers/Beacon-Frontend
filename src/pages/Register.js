@@ -1,32 +1,37 @@
 import React from 'react';
-import styles from '../css/Login.css';
+import '../css/Register.css';
 import logo from '../assets/images/beacon_logo_64_64.png';
 
-class Login extends React.Component {
-  state = {
-        username: "",
-        password: ""
-  };
+class Register extends React.Component {
+	state = {
+		username: "",
+		email: "",
+		password: ""
+	};
 
-  set_username = event => {
-        this.setState({ username: event.target.value });
-        };
+    set_username = event => {
+    	this.setState({ username: event.target.value });
+  	};
+
+  set_email= event => {
+    this.setState({ email: event.target.value });
+  };
 
   set_password = event => {
     this.setState({ password: event.target.value });
   };
 
 
-
-    post(scriptName, flag1, flag2) {
+	post(scriptName, flag1, flag2, flag3) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             console.log(this.responseText);
 
         };
+
         xhttp.open("POST", `http://127.0.0.1/${scriptName}.php`, true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(`username=${flag1}&password=${flag2}`);
+        xhttp.send(`username=${flag1}&email=${flag2}&password=${flag3}`);
 
     }
     constructor(props) {
@@ -39,51 +44,48 @@ class Login extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(this.state.username);
-	console.log(this.state.password);
-	this.post("login", this.state.username, this.state.password);
+        this.post("register", this.state.username, this.state.email, this.state.password);
     }
 
     render() {
         return (
             <div className="ui middle aligned center aligned grid">
-                <div className="column" id="login">
+                <div className="column" id="register">
                     <h2 className="ui purple image header">
                         <img src={logo} className="image" />
                             <div className="content">
-                                Log-In to your Beacon Account
+                                Register a Beacon Account
                             </div>
                     </h2>
                     <form className="ui large form" onSubmit={this.handleSubmit}>
                         <div className="ui stacked segment">
                             <div className="field">
                                 <div className="ui left icon input">
-                                    <i className="user icon">
-                                    </i>
+                                    <i className="user icon" />
                                     <input type="text" name="username" placeholder="Username" onChange={this.set_username} />
                                 </div>
                             </div>
-                            <div className="field">
+
+							<div className="field">
                                 <div className="ui left icon input">
-                                    <i className="lock icon">
-                                    </i>
+                                    <i className="envelope icon" />
+                                    <input type="text" name="email" placeholder="Email" onChange={this.set_email}/>
+                                </div>
+                            </div>
+
+							<div className="field">
+                                <div className="ui left icon input">
+                                    <i className="lock icon" />
                                     <input type="password" name="password" placeholder="Password" onChange={this.set_password}/>
                                 </div>
                             </div>
-                            <button type="submit" className="ui fluid large purple submit button">Login</button>
+                            <button type="submit" className="ui fluid large purple submit button">Sign Up</button>
                         </div>
                     </form>
-                    <div className="ui message">
-                        New to us? &nbsp;
-                        <a href="/register">Sign Up</a>
-                    </div>
-                    <div className="ui message">
-                        <a href="#">Forgot your password?</a>
-                    </div>
                 </div>
             </div>
         );
     }
 }
 
-export default Login;
+export default Register;

@@ -1,0 +1,8 @@
+#register {
+    background: white;
+    margin: auto;
+    border: 5px solid rebeccapurple;
+    height: 25%;
+    width: 25%;
+    transform: translate(0%, 50%);
+}
