@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Login.css';
+import styles from '../css/Login.css';
 import logo from '../assets/images/beacon_logo_64_64.png';
 
 class Login extends React.Component {
@@ -30,33 +30,35 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="ui middle aligned center aligned grid">
-                <div className="column" id="login">
-                    <h2 className="ui purple image header">
-                        <img src={logo} className="image" />
-                            <div className="content">
-                                Log-In to your Beacon Account
-                            </div>
-                    </h2>
-                    <form className="ui large form" onSubmit={this.handleSubmit}>
-                        <div className="ui stacked segment">
-                            <div className="field">
-                                <div className="ui left icon input">
-                                    <i className="user icon">
-                                    </i>
-                                    <input type="text" name="username" placeholder="Username" />
+            <div className={styles.root}>
+                <div className="ui middle aligned center aligned grid">
+                    <div className="column" id="login">
+                        <h2 className="ui purple image header">
+                            <img src={logo} className="image" />
+                                <div className="content">
+                                    Log-In to your Beacon Account
                                 </div>
-                            </div>
-                            <div className="field">
-                                <div className="ui left icon input">
-                                    <i className="lock icon">
-                                    </i>
-                                    <input type="password" name="password" placeholder="Password" />
+                        </h2>
+                        <form className="ui large form" onSubmit={this.handleSubmit}>
+                            <div className="ui stacked segment">
+                                <div className="field">
+                                    <div className="ui left icon input">
+                                        <i className="user icon">
+                                        </i>
+                                        <input type="text" name="username" placeholder="Username" />
+                                    </div>
                                 </div>
+                                <div className="field">
+                                    <div className="ui left icon input">
+                                        <i className="lock icon">
+                                        </i>
+                                        <input type="password" name="password" placeholder="Password" />
+                                    </div>
+                                </div>
+                                <button type="submit" className="ui fluid large purple submit button">Login</button>
                             </div>
-                            <button type="submit" className="ui fluid large purple submit button">Login</button>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         );

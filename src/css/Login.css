@@ -7,6 +7,11 @@
     transform: translate(0%, 50%);
 }
 
-body {
-    background: grey;
+styles.root {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    background: green;
 }

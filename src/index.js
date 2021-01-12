@@ -5,6 +5,7 @@ import { createBrowserHistory } from 'history';
 import './index.css';
 import App from './App';
 import Login from './pages/Login';
+import ServerForm from "./components/ServerForm";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -12,6 +13,7 @@ ReactDOM.render(
         <div>
             <Route path="/" component={App}>
                 <Route path="/login" component={Login} />
+                <Route path="/serverform" component={ServerForm} />
             </Route>
         </div>
     </BrowserRouter>,
