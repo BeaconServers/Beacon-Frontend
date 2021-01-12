@@ -5,14 +5,16 @@ import { createBrowserHistory } from 'history';
 import './index.css';
 import App from './App';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <BrowserRouter>
         <div>
             <Route path="/" component={App}>
-                <Route path="/login" component={Login} />
-            </Route>
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+			</Route>
         </div>
     </BrowserRouter>,
   document.getElementById('root')
