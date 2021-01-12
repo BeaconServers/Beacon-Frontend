@@ -3,6 +3,20 @@ import '../css/Login.css';
 import logo from '../assets/images/beacon_logo_64_64.png';
 
 class Login extends React.Component {
+  state = {
+        username: "",
+        password: ""
+  };
+
+  set_username = event => {
+        this.setState({ username: event.target.value });
+        };
+
+  set_password = event => {
+    this.setState({ password: event.target.value });
+  };
+
+
 
     post(scriptName, flag1, flag2) {
         var xhttp = new XMLHttpRequest();
@@ -25,7 +39,9 @@ class Login extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.post("login", document.getElementsByName("username").values(), document.getElementsByName("password").values());
+        console.log(this.state.username);
+	console.log(this.state.password);
+	this.post("login", this.state.username, this.state.password);
     }
 
     render() {
@@ -44,14 +60,14 @@ class Login extends React.Component {
                                 <div className="ui left icon input">
                                     <i className="user icon">
                                     </i>
-                                    <input type="text" name="username" placeholder="Username" />
+                                    <input type="text" name="username" placeholder="Username" onChange={this.set_username} />
                                 </div>
                             </div>
                             <div className="field">
                                 <div className="ui left icon input">
                                     <i className="lock icon">
                                     </i>
-                                    <input type="password" name="password" placeholder="Password" />
+                                    <input type="password" name="password" placeholder="Password" onChange={this.set_password}/>
                                 </div>
                             </div>
                             <button type="submit" className="ui fluid large purple submit button">Login</button>
