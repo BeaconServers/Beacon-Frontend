@@ -3,10 +3,12 @@ import '../css/Register.css';
 import logo from '../assets/images/beacon_logo_64_64.png';
 
 class Register extends React.Component {
+
 	state = {
 		username: "",
 		email: "",
-		password: ""
+		password: "",
+        passwordVerify: ""
 	};
 
     set_username = event => {
@@ -20,6 +22,10 @@ class Register extends React.Component {
   set_password = event => {
     this.setState({ password: event.target.value });
   };
+
+   set_password_verify = event => {
+      this.setState({passwordVerify: event.target.value });
+   }
 
 
 	post(scriptName, flag1, flag2, flag3) {
@@ -39,7 +45,8 @@ class Register extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount() {
-        console.log('mounted!');
+      this.setState({loopReady: true});
+      console.log('mounted!');
     }
 
     handleSubmit(event) {
@@ -79,10 +86,45 @@ class Register extends React.Component {
                                     <input type="password" name="password" placeholder="Password" onChange={this.set_password}/>
                                 </div>
                             </div>
-                            <button type="submit" className="ui fluid large purple submit button">Sign Up</button>
+                            <div className="field">
+                                <div className="ui left icon input">
+                                    <i className="lock icon" />
+                                    <input type="password" name="passwordVerify" placeholder="Verify your password" onChange={this.set_password_verify}/>
+                                </div>
+                            </div>
+                            <button type="submit" className="ui fluid large purple submit button" id="registerBtn">Sign Up</button>
+                            <div className="ui message">
+                                Already a user? &nbsp;
+                                <a href="/login">Log In</a>
+                            </div>
                         </div>
                     </form>
                 </div>
+            </div>
+        );
+    }
+}
+
+function ResultMessage(props) {
+    const messageType = props.messageType;
+    if (messageType == 0) {
+        return null;
+    } else if (messageType == 1) {
+        return (
+            <div className="ui message">
+                <div className="header">
+                    Account created succesfully!
+                </div>
+                <p>You will be redirected in a moment</p>
+            </div>
+        );
+    } else if (messageType == 2) {
+        return (
+            <div className="ui message">
+                <div className="header">
+                    Error
+                </div>
+                <p>We could not reach a connection to the server. Please try refreshing the page.</p>
             </div>
         );
     }

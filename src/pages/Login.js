@@ -74,7 +74,7 @@ class Login extends React.Component {
                         </div>
                     </form>
                     <div className="ui message">
-                        New to us? &nbsp;
+                        Don't have an account? &nbsp;
                         <a href="/register">Sign Up</a>
                     </div>
                     <div className="ui message">
