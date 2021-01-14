@@ -1,43 +1,28 @@
 {
-  "name": "beacon-client",
-  "version": "0.1.0",
+  "name": "my-app",
+  "version": "0.0.1",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "express": "^4.17.1",
-    "history": "^5.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
-    "semantic-ui-css": "^2.4.1",
-    "web-vitals": "^0.2.4"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "babel-node index.js",
+    "dev": "webpack --mode=development ",
+    "webpackRun": "babel-node dist/index.out.js",
+    "build": "babel index.js app.js -d bin/"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "file-loader": "^6.2.0",
+    "proton-native": "^2.0.4"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@babel/preset-stage-0": "^7.8.3",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.13.0",
+    "webpack-cli": "^4.3.1",
+    "webpack-node-externals": "^2.5.2"
   }
 }
