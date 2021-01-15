@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "file-loader": "^6.2.0",
-    "proton-native": "^2.0.4"
+    "proton-native": "^2.0.4",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",

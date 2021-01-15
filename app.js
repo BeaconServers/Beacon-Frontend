@@ -2,30 +2,6 @@ import React, { Component } from "react"; // import from react
 import { Window, App, Text, Button, TextInput, View, StyleSheet, Image} from "proton-native"; // import the proton-native components
 import logo from './assets/images/beacon_logo_64_64.png'
 
-
-class Toggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {isToggleOn: true};
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    console.log('click secured');
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
-    }));
-  }
-
-  render() {
-    return (
-      <Button onClick={this.handleClick} title={this.state.isToggleOn ? 'ON' : 'OFF'} />        
-    );
-  }
-}
-
-
 class Clock extends Component {
   constructor(props) {
     super(props);
@@ -58,13 +34,46 @@ class Clock extends Component {
 
 
 class Login extends Component {
-  componentDidMount(){
-    console.log('hello world!');
+  state = {
+        username: "",
+		email: "",
+        password: ""
+  };
+
+  set_username(username){
+  	this.setState({ username: username });
+  };
+
+
+  set_password(password){
+    this.setState({ password: password});
+  };
+
+
+    post(scriptName, flag1, flag2) {
+        var XMLHttpRequest= require("xmlhttprequest").XMLHttpRequest;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            console.log(this.responseText);
+
+        };
+        xhttp.open("POST", `http://127.0.0.1/${scriptName}.php`, true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(`username=${flag1}&password=${flag2}`);
+
+    }
+
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  log_stuff(){
-    console.log("Hello!")
-  }
+
+    handleSubmit(event) {
+        console.log(this.state.username);
+		console.log(this.state.password);
+		this.post("login", this.state.username, this.state.password);
+    }
 
     render() {
         return (
@@ -74,14 +83,14 @@ class Login extends Component {
 			</View>
 			<View>
         <Text>Username:</Text>
-				<TextInput placeholder={"Username"} placeholderTextColor={"#ffffff"} />
+				<TextInput onChangeText={text => this.set_username(text)}/>
 			</View>
       <View>
         <Text>Password:</Text>
-        <TextInput placeholder={"Password"} secureTextEntry={true} onChange={this.set_password}/>
+            <TextInput onChangeText={text => this.set_password(text)}/>
       </View>
       <View>
-        <Toggle />
+        <Button onPress={this.handleSubmit} title="Login" />
         <Clock />
       </View>
 		</View>
